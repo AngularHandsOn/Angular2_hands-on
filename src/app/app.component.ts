@@ -1,18 +1,6 @@
 import { Component } from '@angular/core';
 import { Hero } from './hero';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-  title = 'Tour of Heroes';
-
-  // ヒーローズの配列を格納
-  heroes = HEROES;
-}
-
 const HEROES: Hero[] = [
   { id: 11, name: 'Mr. Nice' },
   { id: 12, name: 'Narco' },
@@ -25,3 +13,26 @@ const HEROES: Hero[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Tour of Heroes';
+
+  // ヒーローズの配列を格納
+  heroes = HEROES;
+
+  htro: Hero = {
+    id: 1,
+    name: 'windstorm'
+  };
+
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
+}
